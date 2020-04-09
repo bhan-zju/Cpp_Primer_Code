@@ -4,11 +4,17 @@
 #include <iostream>
 #include <string>
 
-struct Person
+class Person
 {
+	// ÓÑÔªÉùÃ÷
+	friend std::istream& read(std::istream&, Person&);
+	friend std::ostream& print(std::ostream&, const Person&);
+
+private:
 	std::string name;
 	std::string address;
 
+public:
 	Person(): name("LinDaiyu"), address("XiaoxiangGuan") { }
 	Person(const std::string& ming, std::string di): name(ming), address(di) { }
 	Person(std::istream& is);
