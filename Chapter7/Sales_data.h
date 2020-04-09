@@ -4,12 +4,20 @@
 #include <iostream>
 #include <string>
 
-struct Sales_data
+class Sales_data
 {
+	// 为非成员函数做友元声明，从而使得这些函数能够使用类的private成员
+	friend Sales_data add(const Sales_data&, const Sales_data&);      // 执行两个对象的加法
+	friend std::ostream& print(std::ostream&, const Sales_data&);     // 将对象的值输出到ostream
+	friend std::istream& read(std::istream&, Sales_data&);            // 将数据从istream读入到对象中，注意这里形参不能是const
+
+private:
 	std::string bookNo;              // 书本编号
 	unsigned units_sold = 0;         // 销售数量
 	double revenue = 0.0;            // 总销售输入
+	double avg_price() const;                         // 返回平均价格
 
+public:
 	// 构造函数
 	Sales_data() = default;
 	Sales_data(const std::string &s): bookNo(s) { }
@@ -20,10 +28,10 @@ struct Sales_data
 	// 成员函数
 	std::string isbn() const { return bookNo; }       // 返回对象的书本编号   // 也可以写成 return this->bookNo;
 	Sales_data& combine(const Sales_data&);           // 将一个对象加到另一个对象上。成员函数的声明必须在类的内部，但定义可以在类的外部
-	double avg_price() const;                         // 返回平均价格
 };
 
 // 非成员接口函数：概念上来说属于类的接口的组成部分，但它们实际上并不属于类本身；通常和类生命在同一个头文件内
+// 必须在友元声明之外再专门对函数进行一次声明
 Sales_data add(const Sales_data&, const Sales_data&);      // 执行两个对象的加法
 std::ostream& print(std::ostream&, const Sales_data&);     // 将对象的值输出到ostream
 std::istream& read(std::istream&, Sales_data&);            // 将数据从istream读入到对象中，注意这里形参不能是const
