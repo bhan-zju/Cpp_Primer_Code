@@ -5,6 +5,11 @@
 #include <string>
 
 class Screen {
+	// 友元类Window_mgr可以访问Screen的private部分
+	friend class Window_mgr;
+	// 也可以单独 将Window_mgr类内的某个成员函数 定义成友元函数，例如↓
+	//friend void Window_mgr::clear(ScreenIndex);         // 但是要首先声明了Window_mgr::clear函数在前（但是不能定义），要将Window_mgr类也定义在该头文件下，且要在Screen类之前
+
 public:
 	typedef std::string::size_type pos;          // 用于定义类型的成员必须先定义后使用，通常出现在类开始的地方
 
@@ -42,6 +47,9 @@ private:
 	void do_display(std::ostream& os) const
 	{ os << contents; }
 };
+
+
+
 
 // 将光标移动到第r行第c列
 inline Screen& Screen::move(pos r, pos c)      // 可以在函数的定义处指定inline(最好这样子说明inline，更容易理解)
