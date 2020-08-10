@@ -7,7 +7,7 @@ int main()
 {
     int value = 0, sum = 0;
     std::cout << "Enter numbers: " << std::endl;
-    while (std::cin >> value)    // 读取数据知道遇到文件尾，计算所有读入数据的和
+    while (std::cin >> value)    // 读取数据直到遇到文件尾，计算所有读入数据的和
         sum += value;                      // 如果while循环中只有一条语句，可以不加花括号{ }
     std::cout << "Sum is " << sum << std::endl;
     return 0;
