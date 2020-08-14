@@ -35,15 +35,17 @@ int main()
     std::string s6 = "hello", s7 = "world";
     std::string s8 = s6 + ", " + s7 + '.';          //string对象 和 字符串字面值 或 字符字面值 相加
     std::string s9 = s6 + ", ";
-//    std::string s10 = "hello" + ", ";             // 错误：不能把字面值直接相加
+    //std::string s10 = "hello" + ", ";             // 错误：不能把字面值直接相加
     std::string s11 = s6 + ", " + "world";          // s11 = (s6 + ", ") + "world";
-//    std::string s12 = "hello" + ", " + s7;        // 错误：s12 = ("hello" + ", ") + s7;
-    std::cout << "s8: " << s8 << "\n" << "s9: " << s9 << "\n" << "s11: " << s11 << std::endl;
+    std::string s12 = "hello, " + s7 + '!';        // s12 = ("hello, " + s7) + '!';
+	//std::string s13 = "hello" + ", " + s7;       // 错误：s13 = ("hello" + ", ") + s7;
+	std::cout << "s8: " << s8 << "\n" << "s9: " << s9 << "\n" << "s11: " << s11 << "\n" << "s12: " << s12 << std::endl;
+
 
 
 
     std::string line;
-    while (std::getline(std::cin, line))           // std::getlinr(cin, s) 每次读取一行，遇见换行符才停止读取
+    while (std::getline(std::cin, line))           // std::getline(cin, s) 每次读取一行，遇见换行符才停止读取
         if (!line.empty()) {                    // .empty()判断字符串是否为空串
             std::cout << line << std::endl;     // 如果遇见空字符串（即空行），则跳过不输出
             std::cout << line.size() << std::endl;     // .size()为字符串的长度
