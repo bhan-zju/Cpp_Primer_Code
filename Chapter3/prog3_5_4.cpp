@@ -19,7 +19,7 @@ int main()
     const char ca1[] = "A string example";
     const char ca2[] = "A different string";
     //std::cout << (ca1 > ca2) << std::endl;          // 错误：试图比较两个无关的地址
-    std::cout << strcmp(ca2, ca1) << std::endl;       // 如果ca1=ca2，strcmp(ca1, ca2)返回0；如果ca1>ca2，返回一个正值；如果ca1<ca2，返回一个负值
+    std::cout << strcmp(ca1, ca2) << std::endl;       // 如果ca1=ca2，strcmp(ca1, ca2)返回0；如果ca1>ca2，返回一个正值；如果ca1<ca2，返回一个负值
 
     // 字符串的连接和拷贝
     // 标准库string对象
