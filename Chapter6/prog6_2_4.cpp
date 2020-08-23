@@ -24,7 +24,7 @@ void print(const int* beg, const int* end)
     std::cout << std::endl;
 }
 
-// 3.显示传递一个表示数组大小的形参
+// 3.显式传递一个表示数组大小的形参
 void print(const int ia[], size_t size)         // const int ia[] 等价于 const int *ia
 {
     for (size_t i = 0; i != size; ++i)
@@ -41,7 +41,7 @@ void print(int(&arr)[10])           // 但是该函数只能作用于大小为10
 }
 
 // 传递多维数组，二维数组首元素也是数组，因此 传递首元素的指针，本质上是传递了 数组的指针
-void print(int(*matrix)[6], int rowSize)       // (*matrix)[10]指向10维数组的指针，括号不能省略
+void print(int(*matrix)[6], int rowSize)       // (*matrix)[6]指向6维数组的指针，括号不能省略
 {
     for (int row = 0; row != rowSize; ++row) {
         for (auto i : matrix[row])
