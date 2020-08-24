@@ -4,6 +4,7 @@
 // assert(expr); 如果expr为假，则终止程序的执行
 
 #include <iostream>
+#include <string>
 
 #define NDEBUG                 // 如果定义了 NDEBUG 预处理器变量，则关闭 assert 的调试。注意：必须写在 #include <cassert> 之前！！！！！！！！！！
 #include <cassert>
