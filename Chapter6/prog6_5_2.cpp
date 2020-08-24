@@ -1,7 +1,8 @@
-﻿// prog6_5_2.cpp : 内联函数 和 constexpr 函数
+// prog6_5_2.cpp : 内联函数 和 constexpr 函数
 //
 
 #include <iostream>
+#inlcude <string>
 
 // 内联函数 inline：将它在每个调用点上 内联地(de) 展开，适合用于规模较小的函数
 inline const std::string& shorterString(const std::string& s1, const std::string& s2)
