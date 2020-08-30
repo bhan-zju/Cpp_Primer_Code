@@ -66,7 +66,7 @@ int main()
     std::array<int, 10> ia1;            // 10 个默认初始化的int
     std::array<int, 10> ia2 = { 0,1,2,3,4,5,6,7,8,9 };      // 列表初始化
     std::array<int, 10> ia3 = { 42 };          // ia3[0]为42，其余元素为0
-    std::array<int, 10>::size_type i;       // 正确：必须同时制定元素类型和大小
+    std::array<int, 10>::size_type i;       // 正确：必须同时指定元素类型和大小
     //std::array<int>::size_type j;         // 错误：array<int>不是一个类型
 
     // array类型可以进行拷贝或赋值
