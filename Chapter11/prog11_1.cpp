@@ -1,7 +1,8 @@
-﻿// prog11_1.cpp : 关联容器map和set
+// prog11_1.cpp : 关联容器map和set
 //
 
 #include <iostream>
+#include <string>
 #include <map>
 #include <set>
 
